@@ -44,7 +44,7 @@ class Student // class is keyword and Student is name of class
     {
         echo "Name: " . $this->name . "<br>"; // echo is keyword that print values in browser
         echo "Student ID: " . $this->studentId . "<br>"; // $this again point to the current object 
-        echo "Department: " . $this->department . "<br>"; // we can use values of this object after reference current object using $this keyword
+        echo "Department: " . $this->department . "<br><br>"; // we can use values of this object after reference current object using $this keyword
     }
 
     /*
@@ -75,5 +75,26 @@ $student1->sayHello(); // instead of . notation that we have in js and python we
 
 
 $student1->showInfo(); // we check to see student info in browser by calling showinfo behavior of this obj created from class
+
+/*
+    ==================== Part C ==================
+    ==============================================
+    I test behavior of object taken from class again
+    using another set of input values
+    I should see output of following info in browser as well as
+*/
+
+$student2 = new Student("Sara", 1002, "Information System"); // new object from class, so it needs new params as well as
+
+
+$student2->showInfo(); // test bahavior of object taken from calss by calling it, using the exact syntax -> (access properties & behaviors of class)
+
+/*
+    Q1: How many classes did you create?
+    A1: I made one class. (Student)
+
+    Q2: How many objects did you create?
+    A2: I made two objects. (student1 & student2)
+*/
 
 ?>
