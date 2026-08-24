@@ -21,7 +21,8 @@ class StudentAccount { // class keyword for making class and StudentClass is the
 
     public function showInfo() // this function is used for printing or displaying info about a student in web page of browser
     {
-        echo "Name: " . $this->name . "<br>" . // <br> is use to break, new line of code in brwoser
+        echo "========================================================= <br> ======================= Task 1 =============================<br><br> ". 
+        "Name: " . $this->name . "<br>" . // <br> is use to break, new line of code in brwoser
         "Student ID: " . $this->studentId . "<br>" . 
         "department: " .$this->department . "<br>";
     }
@@ -37,7 +38,53 @@ $student1 = new StudentAccount('Ahmad Emran', 1001, "Computer Science"); // we m
 $student1->showInfo(); // call a method or behavior from the class, this method display info about student in web page
 $student1->getStudentId(); // call another method of object that display a private property in web page
 
+/*
+    =========================================================
+    =========================================================
+    ================= Task 1: Experiment: ==================
+    =========================================================
+    =========================================================
+*/
 
+// echo "public     " . $student1->name;  // we want to access a public property outside of class
+// echo "private      " . $student1->studentId; // as we access private property we got an error Cannot access private property StudentAccount
+// echo "protected     " . $student1->department; // protected property only can accessed in child classes where we inherit from parent class, not outside of class. here we take this error Cannot access protected property StudentAccount:
+
+/*
+    =========================================================
+    =========================================================
+    =============== Task 2: Inheritance =====================
+    =========================================================
+    =========================================================
+*/
+echo "<br><br>========================================================= <br> ======================= Task 2 =============================<br><br> ";
+
+class Person // a class create by name of Person and then it will come as parent class
+{
+    protected $name; // this property access within the class itself and all child classes
+    
+    public function __construct($name) // this is constructor and is called when we create the object from this class
+    {
+        $this->name = $name; // take the name from object (function argument) and assign it to property
+    }
+
+    public function introduce() // this is a public method that display name of student in web page
+    {
+        echo "My name is " . $this->name . "<br>"; // this message is displayed in web page
+    }
+    }
+
+    class Student extends Person // another class is made that inherit from a class (parent) and automatically take all properities and metehods of parent class
+    {
+
+    public function study() // this is a method that gonna work behind of all that methods that are availablel in parent  class
+    {
+        echo $this->name . " is studying. "; // take name from parent class and display it in web page
+    }
+}
+$student2 = new Student("Sara"); // we make an object from the child class and can access all property & method from parent class
+$student2->introduce(); // introduce is the method that is in parent class and we can access it
+$student2->study(); // but study is in child class and we can access it also from the child that we created the object 
 
 
 ?>
